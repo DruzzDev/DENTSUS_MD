@@ -7,13 +7,13 @@ export async function execute(natsu, msg, args, from) {
 
   if (!args[0] || !["on", "off", "status"].includes(args[0])) {
     return await natsu.sendMessage(jid, {
-      text: `> *ᴅʀᴜᴢᴢ xᴅ: 📡 ᴀᴜᴛᴏ-ᴊᴏɪɴ ɴᴇᴡsʟᴇᴛᴛᴇʀ*\n\n*ᴜsᴀɢᴇ:*\n*.ᴀᴜᴛᴏᴊᴏɪɴ ᴏɴ — ᴊᴏɪɴ ᴛʜᴇ ᴏғғɪᴄɪᴀʟ ᴄʜᴀɴɴᴇʟs*\n*.ᴀᴜᴛᴏᴊᴏɪɴ ᴏғғ — ᴜɴsᴜʙsᴄʀɪʙᴇ ғʀᴏᴍ ᴛʜᴇ ᴄʜᴀɴɴᴇʟs*\n*.ᴀᴜᴛᴏᴊᴏɪɴ sᴛᴀᴛᴜs — ᴠɪᴇᴡ ᴛʜᴇ ᴄʜᴀɴɴᴇʟs*\n\n*🌐 ᴄʜᴀɴɴᴇʟs:*\n${CHANNELS.whatsapp1}\n${CHANNELS.whatsapp2}`,
+      text: `> 𝗗𝗥𝗨𝗭𝗭 𝗫𝗗: 📡 Auto-join Newsletter\n\nUsage:\n.autojoin on — join the official channels\n.autojoin off — unsubscribe from the channels\n.autojoin status — view the channels\n\n🌐 Channels:\n${CHANNELS.whatsapp1}\n${CHANNELS.whatsapp2}`,
     }, { quoted: msg });
   }
 
   if (args[0] === "status") {
     return await natsu.sendMessage(jid, {
-      text: `> *ᴅʀᴜᴢᴢ xᴅ: 📡 ᴏғғɪᴄɪᴀʟ ᴄᴀɴᴀʟ ᴅʀᴜᴢᴢ*\n\n*🌐 ᴡʜᴀᴛsᴀᴘᴘ 1:*\n${CHANNELS.whatsapp1}\n\n*🌐 ᴡʜᴀᴛsᴀᴘᴘ 2:*\n${CHANNELS.whatsapp2}\n\n*📱 ᴛᴇʟᴇɢʀᴀᴍ:*\n${CHANNELS.telegram1}\n${CHANNELS.telegram2}`,
+      text: `> *ᴅʀᴜᴢᴢ xᴅ: 📡 ᴏғғɪᴄɪᴀʟ ᴄᴀɴᴀʟ ᴅʀᴜᴢᴢ*\n\n*🌐 ᴡʜᴀᴛsᴀᴘᴘ 1:*\n${CHANNELS.whatsapp1}\n\n*🌐 WhatsApp 2:*\n${CHANNELS.whatsapp2}\n\n*📱 Telegram:*\n${CHANNELS.telegram1}\n${CHANNELS.telegram2}`,
     }, { quoted: msg });
   }
 

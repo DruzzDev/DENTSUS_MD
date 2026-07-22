@@ -1,4 +1,15 @@
-import {
+// Loaded via createRequire (raw CommonJS), NOT a static ESM import.
+// @whiskeysockets/baileys ships as CommonJS, and Node relies on a static
+// analyzer (cjs-module-lexer) to guess which of its properties can be used
+// as ESM named imports. That analyzer's behavior differs across Node
+// versions/builds: it worked fine on one host but on Railway's Node build it
+// failed to detect `proto`, crashing at startup with
+// "SyntaxError: Named export 'proto' not found" before the app even ran.
+// require() sidesteps that guesswork completely and always returns the real
+// module.exports object, so this works identically on every Node version/host.
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const {
   makeWASocket,
   useMultiFileAuthState,
   fetchLatestBaileysVersion,
@@ -6,7 +17,7 @@ import {
   DisconnectReason,
   isJidBroadcast,
   proto,
-} from "@whiskeysockets/baileys";
+} = require("@whiskeysockets/baileys");
 import chalk from "chalk";
 import fs from "fs";
 import path from "path";
